@@ -14,7 +14,7 @@ public class ResponModel {
     String i_status;
     String id;
     String i_name;
-    String i_sell;
+    int i_sell;
     String i_code;
 
     public String getI_code() {
@@ -145,11 +145,11 @@ public class ResponModel {
         this.i_name = i_name;
     }
 
-    public String getI_sell() {
+    public int getI_sell() {
         return i_sell;
     }
 
-    public void setI_sell(String i_sell) {
+    public void setI_sell(int i_sell) {
         this.i_sell = i_sell;
     }
 

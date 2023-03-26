@@ -21,14 +21,23 @@ import java.util.ArrayList;
                 resModel.setI_name(myJSONObject.
                         getString("i_name"));
                 resModel.setI_sell(myJSONObject.
-                        getString("i_sell"));
+                        getInt("i_sell"));
+                resModel.setI_qty(myJSONObject.
+                        getString("i_qty"));
                 responseModels.add(resModel);
             }
             for (int index = 0; index < responseModels.size(); index++) {
-                System.out.println("nama : " +
-                        responseModels.get(index).getI_name());
-                System.out.println("harga : " +
-                        responseModels.get(index).getI_sell());
+                Long Stok = Long.parseLong(responseModels.get(index).getI_qty());
+                int Harga = responseModels.get(index).getI_sell();
+                String Nama = String.valueOf(responseModels.get(index).getI_name().charAt(0));
+
+                if (Nama.contains("S")&& Harga<7000) {
+                    if (Stok>0) {
+                        System.out.println("Nama " + responseModels.get(index).getI_name());
+                        System.out.println("Harga " + responseModels.get(index).getI_sell());
+                        System.out.println("Stok Barang " + responseModels.get(index).getI_qty());
+                        }
+                    }
                 }
             }
         }
